@@ -10,24 +10,6 @@ import { CryptoJS } from './sm4.js'
 import key from './word.js'
 
 let requestLoadingCount = 0; //请求接口时showLoading的数量
-let getExcludeSer = getExtraJson();
-
-const getEncryFlag = async (serviceId) => {
-  await getExcludeSer;
-  let noEncryptServices: Array<any> = [];
-  try {
-    noEncryptServices = JSON.parse(uni.getStorageSync("encryptExcludeServices") || "[]");
-    if (!Array.isArray(noEncryptServices) || noEncryptServices.length == 0) {
-      noEncryptServices = [];
-    }
-  } catch (e) {
-    noEncryptServices = [];
-  }
-  if (serviceId && noEncryptServices.includes(serviceId)) {
-    return false;
-  }
-  return ENCRY_FLAG;
-};
 
 const preDefinedAPIError = {
   "-1": { msg: "请求参数缺失" },
@@ -92,8 +74,8 @@ function handleResponseError(
   if (statusCode == 403 && !handleRejectBySelf) {
     onLoginout();
   }
-  console.log("api;uniRequest;err=", err);
-  let httpErrMsg = err ? "http请求无响应" : "http请求返回错误";
+  console.log("api;handleResponseError;err=", err);
+  let httpErrMsg = err ? "http请求返回错误" : "http请求无响应";
   const data = {
     statusCode: statusCode,
     msg: httpErrMsg,
@@ -101,7 +83,7 @@ function handleResponseError(
   if (showMessage) {
     uni.showToast({ title: httpErrMsg, icon: "none" });
   }
-  return Promise.reject(data);
+  return data;
 }
 
 function handleResponseSuccess(
@@ -145,20 +127,6 @@ function getSm3Sign(nonceStr, params: any) {
   return Sm3(signStr);
 }
 
-async function getExtraJson() {
-  try {
-    let res = await commonGet(
-        "/resources/extras.json",
-        {});
-    uni.setStorageSync(
-        "encryptExcludeServices",
-        res.data?.encryptExcludeServices?.length > 0
-            ? JSON.stringify(res.data?.encryptExcludeServices)
-            : "[]"
-    );
-  } catch (err) {}
-}
-
 async function uniRequest(
   requestOptions: AnyObject,
   handleRejectBySelf: boolean = false,
@@ -177,10 +145,9 @@ async function uniRequest(
   if (showLoading) {
     requestLoadingCount--;
   }
-  if (requestLoadingCount == 0) {
+  if (showLoading && requestLoadingCount == 0) {
     hideLoadingWithDelay(delayLoading);
   }
-
   let serviceId = requestOptions?.header?.["X-Service-Id"];
   let { statusCode, data } = res;
   if (statusCode == 200) {
@@ -251,7 +218,7 @@ export const commonAjax = async function (
   );
 };
 
-export const commonGet = async function(
+export const commonGet = async function (
     url: string,
     data: any,
     baseUrl?: string,
@@ -287,6 +254,44 @@ export const commonGet = async function(
       showMessage
   );
 }
+
+const getExcludeSer = getExtraJson();
+
+async function getExtraJson() {
+  try {
+    let res = await commonGet(
+        "/resources/extras.json",
+        {},"",
+        {handleRejectBySelf:true,showLoading:false,showMessage:false});
+    uni.setStorageSync(
+        "encryptExcludeServices",
+        res.data?.encryptExcludeServices?.length > 0
+            ? JSON.stringify(res.data?.encryptExcludeServices)
+            : "[]"
+    );
+  } catch (err) {
+  }
+}
+
+const getEncryFlag = async (serviceId) => {
+  if (!serviceId){
+    return ENCRY_FLAG;
+  }
+  await getExcludeSer;
+  let noEncryptServices: Array<any> = [];
+  try {
+    noEncryptServices = JSON.parse(uni.getStorageSync("encryptExcludeServices") || "[]");
+    if (!Array.isArray(noEncryptServices) || noEncryptServices.length == 0) {
+      noEncryptServices = [];
+    }
+  } catch (e) {
+    noEncryptServices = [];
+  }
+  if (serviceId && noEncryptServices.includes(serviceId)) {
+    return false;
+  }
+  return ENCRY_FLAG;
+};
 
 //文件上传
 export const fileUpload = async function(

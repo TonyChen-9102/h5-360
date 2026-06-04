@@ -3,16 +3,17 @@ import key from '../word.js'
 export const requestInterceptor = () => {
   uni.addInterceptor("request", {
     invoke(args) {
-      // 1.添加公共参数
       // #ifdef MP-WEIXIN || APP-PLUS
       args.header && (args.header.cookie = `tk=${uni.getStorageSync("accessToken") || ""}`);
       // #endif
       // #ifdef H5
       document.cookie = `tk=${uni.getStorageSync("accessToken") || ""}`;
       // #endif
-      //2.如果需要对参数进行加密，则进行加密
+
+      //如果需要对参数进行加密，则进行加密
       if (args.header && args.header["X-Service-Encrypt"] == "2") {
-        let param = typeof args.data == "object" ? JSON.stringify(args.data) : args.data;
+        // let param = typeof args.data == "object" ? JSON.stringify(args.data) : args.data;
+        let param = JSON.stringify(args.data);
         args.data = CryptoJS.encrypt(param, key);
       }
     },

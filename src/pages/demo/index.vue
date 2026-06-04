@@ -1,6 +1,7 @@
 <template>
   <view class="container">
     <button type="primary" @click="handleLogin">登录</button>
+    <button type="primary" @click="handleLoginByOpenId">微信 OpenId 登录</button>
     <view class="toast-section">
       <view class="section-title">Toast 示例</view>
       <u-button type="primary" @click="showDefaultToast">默认 Toast</u-button>
@@ -14,6 +15,8 @@
 import { Vue, Component } from 'vue-property-decorator'
 import { State } from 'vuex-class'
 import { UserModel, UserInfo } from '@MODEL/userModel'
+import { commonAjax } from '@/api/api'
+import { config } from '@/config'
 
 declare const uni: any
 
@@ -39,8 +42,6 @@ export default class DemoIndex extends Vue {
       userInfo: mockUser
     })
 
-    console.error("ckk;登录成功")
-
     uni.showToast({
       title: '登录成功',
       icon: 'success',
@@ -53,6 +54,22 @@ export default class DemoIndex extends Vue {
     ;(this.$refs.uToast as any).show({
       title: '默认提示'
     })
+  }
+
+  // 微信 OpenId 登录
+  async handleLoginByOpenId() {
+    const params = [
+      {
+        tenantId: config.TENANT_ID,
+        roleCode: 'patient',
+        outAppType: 'wx',
+        outAppId: 'wxc05533898d6fd716',
+        outUid: 'oUFcd6CfJ9lV0ogm-WDWWHsNejVg'
+      }
+    ]
+
+    let res = await commonAjax(params, 'hcn.weChatpService', 'loginByOpenId')
+    console.log('loginByOpenId 响应:', res)
   }
 }
 </script>
