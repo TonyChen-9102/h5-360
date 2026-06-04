@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "outDir": "./output",
+    "sourceMap": true,
+    "strict": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
+    "importHelpers": true,
+    "removeComments": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "types": [
+      "node",
+      "@dcloudio/types",
+      "miniprogram-api-typings",
+      "mini-types"
+    ],
+    "paths": {
+      "@/*": ["src/*"],
+      "@API/*": ["src/api/*"],
+      "@MODEL/*": ["src/modelData/*"],
+      "@PAGES/*": ["src/pages/*"]
+    },
+    "lib": ["esnext", "dom", "dom.iterable"]
+  },
+  "exclude": ["node_modules", "unpackage"]
+}
