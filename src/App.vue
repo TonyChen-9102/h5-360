@@ -26,7 +26,5 @@ page {
   color: #333;
 }
 
-.container {
-  padding: 20rpx;
-}
+
 </style>

@@ -8,6 +8,14 @@
       "style": {
         "navigationBarTitleText": "Demo页面"
       }
+    },
+    {
+      "path": "pages/residentHome/index",
+      "style": {
+        "navigationBarTitleText": "健康视图概览",
+        "navigationBarBackgroundColor": "#1E74FE",
+        "navigationBarTextStyle": "white"
+      }
     }
   ],
   "globalStyle": {
