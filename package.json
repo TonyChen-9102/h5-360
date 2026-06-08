@@ -27,6 +27,7 @@
     "@dcloudio/uni-mp-weixin": "2.0.2-3080720230630001",
     "@dcloudio/uni-stat": "2.0.2-3080720230630001",
     "core-js": "3.38.1",
+    "echarts": "5.6.0",
     "qs": "6.11.0",
     "regenerator-runtime": "0.12.1",
     "tslib": "2.8.0",

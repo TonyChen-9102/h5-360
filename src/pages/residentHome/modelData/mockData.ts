@@ -4,6 +4,7 @@ import {VisitRecordCardData, VisitType} from './visitRecordModel'
 import {InspectionRecordCardData, RecordType} from './inspectionRecordModel'
 import {MedicationRecordCardData} from './medicationRecordModel'
 import {SurgeryRecordCardData} from './surgeryRecordModel'
+import {VitalSignCardData} from './vitalSignsModel'
 
 /**
  * 居民健康页 mock 数据集合
@@ -26,6 +27,79 @@ export const mockResidentInfo: ResidentInfo = {
   teamName: '方洪全医生团队',
   orgName: '创业智慧医院',
   expireDate: '2026-05-15'
+}
+
+/** 生命体征卡片 mock */
+export const mockVitalSignCard: VitalSignCardData = {
+  activeMetric: 'bloodPressure',
+  metrics: [
+    {
+      key: 'bloodPressure',
+      title: '血压',
+      unit: 'mmol/L'
+    },
+    {
+      key: 'bloodSugar',
+      title: '血糖',
+      unit: 'mmol/L'
+    },
+    {
+      key: 'bmi',
+      title: 'BMI',
+      unit: 'cm/kg'
+    }
+  ],
+  dates: ['09.01', '09.02', '09.03', '09.04', '09.05', '09.06'],
+  seriesMap: {
+    bloodPressure: [
+      {
+        name: '收缩压',
+        unit: 'mmHg',
+        color: '#1E74FE',
+        values: [120, 136, 116, 98, 116, 88]
+      },
+      {
+        name: '舒张压',
+        unit: 'mmHg',
+        color: '#15AB64',
+        values: [100, 112, 96, 82, 96, 76]
+      }
+    ],
+    bloodSugar: [
+      {
+        name: '空腹血糖',
+        unit: 'mmol/L',
+        color: '#1E74FE',
+        values: [5.2, 5.6, 5.4, 5.8, 5.5, 5.3]
+      },
+      {
+        name: '餐后血糖',
+        unit: 'mmol/L',
+        color: '#15AB64',
+        values: [7.1, 7.8, 7.4, 8.2, 7.6, 7.3]
+      }
+    ],
+    bmi: [
+      {
+        name: '身高',
+        unit: 'cm',
+        color: '#15AB64',
+        values: [168, 168, 168, 168, 168, 168]
+      },
+      {
+        name: '体重',
+        unit: 'kg',
+        color: '#FF9F1C',
+        values: [67.2, 67.6, 67.4, 68.1, 67.8, 67.1]
+      },
+      {
+        name: 'BMI',
+        unit: 'kg/m²',
+        color: '#1E74FE',
+        values: [23.8, 24.1, 23.9, 24.2, 24.0, 23.7]
+      }
+    ]
+  }
 }
 
 /** 既往史/生活习惯卡片 mock */

@@ -69,6 +69,11 @@
         @view-click="handleVisitRecordViewClick"
     ></VisitRecordCardComp>
 
+    <VitalSignsCardComp
+        :card-data="vitalSignCard"
+        @metric-change="handleVitalSignMetricClick"
+    ></VitalSignsCardComp>
+
     <InspectionRecordCardComp
         :card-data="inspectionRecordCard"
         @tab-change="handleInspectionRecordTabClick"
@@ -95,7 +100,9 @@ import {VisitRecordCardData} from './modelData/visitRecordModel'
 import {InspectionRecordCardData} from './modelData/inspectionRecordModel'
 import {MedicationRecordCardData} from './modelData/medicationRecordModel'
 import {SurgeryRecordCardData} from './modelData/surgeryRecordModel'
-import {mockMedicalHistoryCard, mockResidentInfo, mockVisitRecordCard, mockInspectionRecordCard, mockMedicationRecordCard, mockSurgeryRecordCard} from './modelData/mockData'
+import {VitalSignCardData, VitalSignMetricKey} from './modelData/vitalSignsModel'
+import {mockMedicalHistoryCard, mockResidentInfo, mockVisitRecordCard, mockInspectionRecordCard, mockMedicationRecordCard, mockSurgeryRecordCard, mockVitalSignCard} from './modelData/mockData'
+import VitalSignsCardComp from './comp/VitalSignsCard.vue'
 import MedicalHistoryCardComp from './comp/MedicalHistoryCard.vue'
 import VisitRecordCardComp from './comp/VisitRecordCard.vue'
 import InspectionRecordCardComp from './comp/InspectionRecordCard.vue'
@@ -105,6 +112,7 @@ import SurgeryRecordCardComp from './comp/SurgeryRecordCard.vue'
 @Component({
   name: 'ResidentHomeIndex',
   components: {
+    VitalSignsCardComp,
     MedicalHistoryCardComp,
     VisitRecordCardComp,
     InspectionRecordCardComp,
@@ -114,6 +122,8 @@ import SurgeryRecordCardComp from './comp/SurgeryRecordCard.vue'
 })
 export default class ResidentHomeIndex extends Vue {
   residentInfo: ResidentInfo = mockResidentInfo
+
+  vitalSignCard: VitalSignCardData = mockVitalSignCard
 
   medicalHistoryCard: MedicalHistoryCardData = mockMedicalHistoryCard
 
@@ -127,6 +137,10 @@ export default class ResidentHomeIndex extends Vue {
 
   get avatarUrl(): string {
     return ResidentHomeModel.getAvatarImage(this.residentInfo.sex, this.residentInfo.age)
+  }
+
+  handleVitalSignMetricClick(metricKey: VitalSignMetricKey): void {
+    this.vitalSignCard.activeMetric = metricKey
   }
 
   handleMedicalHistoryTabClick(tabKey: string): void {
