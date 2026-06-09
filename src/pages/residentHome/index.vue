@@ -1,3 +1,6 @@
+<!--
+ * @Description: 健康视图概览页面，展示居民基础信息及各类健康卡片概览
+-->
 <template>
   <view class="container">
     <view class="patient-info">
@@ -8,7 +11,6 @@
             width="280rpx"
             height="360rpx"
         ></u-image>
-        <view class="avatar-mask"></view>
       </view>
       <view class="info-left">
         <view class="name-row">
@@ -62,6 +64,8 @@
     <MedicalHistoryCardComp
         :card-data="medicalHistoryCard"
         @tab-change="handleMedicalHistoryTabClick"
+        @row-click="handleMedicalHistoryRowClick"
+        @archive-view-click="handleHealthArchiveViewClick"
     ></MedicalHistoryCardComp>
 
     <VisitRecordCardComp
@@ -97,7 +101,7 @@ import {Vue, Component} from 'vue-property-decorator'
 import {ResidentHomeModel, ResidentInfo} from './modelData/residentHomeModel'
 import {MedicalHistoryCardData} from './modelData/medicalHistoryModel'
 import {VisitRecordCardData} from './modelData/visitRecordModel'
-import {InspectionRecordCardData} from './modelData/inspectionRecordModel'
+import {InspectionRecordCardData, RecordType} from './modelData/inspectionRecordModel'
 import {MedicationRecordCardData} from './modelData/medicationRecordModel'
 import {SurgeryRecordCardData} from './modelData/surgeryRecordModel'
 import {VitalSignCardData, VitalSignMetricKey} from './modelData/vitalSignsModel'
@@ -147,11 +151,26 @@ export default class ResidentHomeIndex extends Vue {
     this.medicalHistoryCard.activeTab = tabKey
   }
 
+  handleMedicalHistoryRowClick(rowLabel: string): void {
+    if (rowLabel !== '过敏史') {
+      return
+    }
+    this.$Router.navigateTo({
+      url: '/pages/residentHome/allergyInfo'
+    })
+  }
+
+  handleHealthArchiveViewClick(): void {
+    this.$Router.navigateTo({
+      url: '/pages/residentHome/healthArchive'
+    })
+  }
+
   handleVisitRecordViewClick(): void {
     // TODO: 跳转就诊视图页面
   }
 
-  handleInspectionRecordTabClick(tabKey: string): void {
+  handleInspectionRecordTabClick(tabKey: RecordType): void {
     this.inspectionRecordCard.activeTab = tabKey
   }
 
@@ -185,8 +204,8 @@ export default class ResidentHomeIndex extends Vue {
 
 .avatar-bg {
   position: absolute;
-  right: 30rpx;
-  bottom: 40rpx;
+  right: 0;
+  bottom: 0;
   width: 300rpx;
   height: 100%;
   display: flex;

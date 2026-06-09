@@ -1,18 +1,21 @@
+/**
+ * 居民首页数据模型
+ */
 export interface DiseaseTag {
-  name: string
+  name: string // 疾病标签名称
 }
 
 export interface ResidentInfo {
-  name: string
-  sex: number
-  age: number
-  idNumber: string
-  healthArchive: string
-  diseases: DiseaseTag[]
-  doctorName: string
-  teamName: string
-  orgName: string
-  expireDate: string
+  name: string // 居民姓名
+  sex: number // 性别标识
+  age: number // 年龄
+  idNumber: string // 身份证号
+  healthArchive: string // 健康档案编号或标识
+  diseases: DiseaseTag[] // 重点疾病标签列表
+  doctorName: string // 家庭医生姓名
+  teamName: string // 家医团队名称
+  orgName: string // 签约机构名称
+  expireDate: string // 签约到期时间
 }
 
 const avatarImages = {

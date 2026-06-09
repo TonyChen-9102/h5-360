@@ -348,25 +348,18 @@ export const fileUpload = async function(
 // 图片请求（所有静态图片）
 export const miniImageUrl = (
   str: string | number,
-  isFaces: boolean = false,
-  isTabbar: boolean = false,
   folderName?: string
 ) => {
   if (/^(http:|https:).*/.test(String(str))) {
     return str;
   }
-  // 获取底部tab图标
-  if (isTabbar) {
-    return `/static/images/${str}`;
-  }
   if (!str) {
     return "";
   }
-  let path = isFaces ? "faces" : "images";
   let url = "";
-  url = `${BASE_WEB_SERVICE_PATH}/mini_images/${path}/${str}`;
+  url = `${BASE_WEB_SERVICE_PATH}/mini_images/images/${str}`;
   if (folderName) {
-    url = `${BASE_WEB_SERVICE_PATH}/mini_images/${path}/${folderName}/${str}`;
+    url = `${BASE_WEB_SERVICE_PATH}/mini_images/images/${folderName}/${str}`;
   }
   return url;
 };

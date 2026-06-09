@@ -16,6 +16,22 @@
         "navigationBarBackgroundColor": "#1E74FE",
         "navigationBarTextStyle": "white"
       }
+    },
+    {
+      "path": "pages/residentHome/allergyInfo",
+      "style": {
+        "navigationBarTitleText": "过敏信息",
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/residentHome/healthArchive",
+      "style": {
+        "navigationBarTitleText": "健康档案",
+        "navigationBarBackgroundColor": "#1E74FE",
+        "navigationBarTextStyle": "white"
+      }
     }
   ],
   "globalStyle": {

@@ -114,7 +114,7 @@ export default class InspectionRecordCardComp extends Vue {
   position: absolute;
   left: 0;
   bottom: -6rpx;
-  width: 88rpx;
+  width: 120rpx;
   height: 12rpx;
   background: linear-gradient(90deg, rgba(30, 116, 254, 0.5) 0%, rgba(30, 116, 254, 0) 100%);
 }

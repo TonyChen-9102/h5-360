@@ -14,7 +14,7 @@
           <view v-if="activeTab.key === tab.key" class="medical-history-tab-line"></view>
         </view>
       </view>
-      <view class="archive-view">
+      <view class="archive-view" @click.stop="handleArchiveViewClick">
         <text class="archive-view-text u-fs28 u-fw400">档案视图</text>
         <u-icon name="arrow-right" color="#666666" size="28" class="archive-view-icon"></u-icon>
       </view>
@@ -25,6 +25,7 @@
           v-for="(row, rowIndex) in activeTab.rows"
           :key="rowIndex"
           class="medical-history-row"
+          @click="handleRowClick(row.label)"
       >
         <text class="medical-history-label u-fs28 u-fw400">{{ row.label }}</text>
         <view class="medical-history-content">
@@ -38,7 +39,7 @@
           </view>
         </view>
         <u-icon
-            v-if="row.showArrow"
+            v-if="row.label === '过敏史' && ((row.tags && row.tags.length > 0) || row.value)"
             name="arrow-right"
             color="#CCCCCC"
             size="36"
@@ -65,6 +66,14 @@ export default class MedicalHistoryCardComp extends Vue {
 
   handleTabClick(tabKey: string): void {
     this.$emit('tab-change', tabKey)
+  }
+
+  handleRowClick(rowLabel: string): void {
+    this.$emit('row-click', rowLabel)
+  }
+
+  handleArchiveViewClick(): void {
+    this.$emit('archive-view-click')
   }
 }
 </script>

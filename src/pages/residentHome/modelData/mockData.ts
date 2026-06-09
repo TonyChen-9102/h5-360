@@ -5,6 +5,8 @@ import {InspectionRecordCardData, RecordType} from './inspectionRecordModel'
 import {MedicationRecordCardData} from './medicationRecordModel'
 import {SurgeryRecordCardData} from './surgeryRecordModel'
 import {VitalSignCardData} from './vitalSignsModel'
+import {AllergyInfoPageData, AllergyLevel} from './allergyInfoModel'
+import {HealthArchivePageData} from './healthArchiveModel'
 
 /**
  * 居民健康页 mock 数据集合
@@ -14,8 +16,8 @@ import {VitalSignCardData} from './vitalSignsModel'
 /** 居民基本信息 mock */
 export const mockResidentInfo: ResidentInfo = {
   name: '谢元华',
-  sex: 1,
-  age: 54,
+  sex: 2,
+  age: 64,
   idNumber: 'A10000234',
   healthArchive: 'CNHZJMJJKDA00001',
   diseases: [
@@ -156,6 +158,148 @@ export const mockMedicalHistoryCard: MedicalHistoryCardData = {
       ]
     }
   ]
+}
+
+/** 过敏信息页 mock */
+export const mockAllergyInfoPage: AllergyInfoPageData = {
+  list: [
+    {
+      name: '青霉素(青霉素类)',
+      level: AllergyLevel.Low,
+      details: [
+        {label: '分类', value: '药物'},
+        {label: '来源', value: '药物'},
+        {label: '症状', value: '皮试阳性、发热'}
+      ]
+    },
+    {
+      name: '花粉',
+      level: AllergyLevel.Medium,
+      details: [
+        {label: '分类', value: '周围环境'},
+        {label: '来源', value: '悬浮物'},
+        {label: '症状', value: '鼻子堵塞'}
+      ]
+    },
+    {
+      name: '海鲜',
+      level: AllergyLevel.High,
+      details: [
+        {label: '分类', value: '食物'},
+        {label: '来源', value: '食物'},
+        {label: '症状', value: '皮肤红疹'}
+      ]
+    }
+  ]
+}
+
+/** 健康档案页 mock */
+export const mockHealthArchivePage: HealthArchivePageData = {
+  personalInfo: {
+    avatar: '',
+    name: '谢元华',
+    sex: 2,
+    age: 64,
+    archiveNo: 'CNHZJMJKDA0001',
+    phoneLabel: '联系电话',
+    phone: '18364950778',
+    idCardLabel: '身份证号',
+    idCardNo: '203840197506231234',
+    tags: [
+      {name: '高血压'},
+      {name: '超重'}
+    ],
+    creatorLabel: '建档人',
+    creatorName: '方洪全',
+    createdAtLabel: '建档日期',
+    createdAt: '2026-05-10'
+  },
+  basicInfoSection: {
+    groups: [
+      {
+        key: 'basicInfo',
+        title: '基本信息',
+        expanded: true,
+        fields: [
+          {label: '姓名', value: '谢*华'},
+          {label: '身份证号', value: '**************1293'},
+          {label: '出生日期', value: '1******3'},
+          {label: '性别', value: '女'},
+          {label: '民族', value: '汉族'},
+          {label: '工作单位', value: '创业智慧医院'},
+          {label: '本人电话', value: '132****2938'},
+          {label: '现住址', value: '浙江省杭州市滨江区彩普路'},
+          {label: '户籍地址', value: '浙江省杭州市滨江区坚塔路'},
+          {label: '常住类型', value: '常住'},
+          {label: '血型', value: 'O型'},
+          {label: 'RH', value: '阳性'},
+          {label: '文化程度', value: '本科'},
+          {label: '职业', value: '不详'},
+          {label: '婚姻状况', value: '不详'},
+          {label: '医疗费用支付方式', value: '医保'}
+        ]
+      },
+      {
+        key: 'drugAllergy',
+        title: '药物过敏史',
+        expanded: false,
+        fields: [
+          {label: '过敏药物', value: '青霉素(青霉素类)'},
+          {label: '症状', value: '皮试阳性、发热'}
+        ]
+      },
+      {
+        key: 'exposureHistory',
+        title: '暴露史',
+        expanded: false,
+        fields: [
+          {label: '暴露情况', value: '无'}
+        ]
+      },
+      {
+        key: 'pastHistory',
+        title: '既往史',
+        expanded: false,
+        fields: [
+          {label: '疾病史', value: '高血压'},
+          {label: '手术史', value: '阑尾切除'}
+        ]
+      },
+      {
+        key: 'familyHistory',
+        title: '家族史',
+        expanded: false,
+        fields: [
+          {label: '家族疾病', value: '父亲高血压'}
+        ]
+      },
+      {
+        key: 'geneticHistory',
+        title: '遗传病史',
+        expanded: false,
+        fields: [
+          {label: '遗传病', value: '无'}
+        ]
+      },
+      {
+        key: 'disability',
+        title: '残疾情况',
+        expanded: false,
+        fields: [
+          {label: '残疾情况', value: '无残疾史'}
+        ]
+      },
+      {
+        key: 'livingEnvironment',
+        title: '生活环境',
+        expanded: false,
+        fields: [
+          {label: '厨房排风设施', value: '有'},
+          {label: '饮水', value: '自来水'}
+        ]
+      }
+    ]
+  }
 }
 
 /** 就诊记录卡片 mock */

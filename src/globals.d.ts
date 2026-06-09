@@ -4,6 +4,8 @@ declare module 'vue/types/vue' {
   interface Vue {
     $Router: any
     $store: any
+    $jktImgView: (avatarFileId: string) => string
+    $miniImageUrl: (avatarFileId: string) => string
   }
 }
 

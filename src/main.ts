@@ -7,6 +7,7 @@ import Router from '@API/router'
 
 // 引入 uview-ui
 import uView from 'uview-ui'
+import {jktImgView, miniImageUrl} from "@API/api";
 Vue.use(uView)
 
 Vue.config.productionTip = false
@@ -15,6 +16,8 @@ addInterceptors()
 
 Vue.prototype.$Router = Router
 Vue.prototype.$store = store
+Vue.prototype.$jktImgView = jktImgView
+Vue.prototype.$miniImageUrl = miniImageUrl
 
 new App({
   store,
