@@ -56,7 +56,7 @@
 <script lang="ts">
 import {Component, Vue, Prop} from 'vue-property-decorator'
 import {HealthArchivePersonalInfo} from '../modelData/healthArchiveModel'
-import BsResidentAvatar from '@/components/BsResidentAvatar.vue'
+import BsResidentAvatar from '@/components/BsResidentAvatar/index.vue'
 
 @Component({
   name: 'HealthArchivePersonCard',
