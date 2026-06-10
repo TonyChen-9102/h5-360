@@ -55,15 +55,10 @@ import {mockRecordListMap, mockChildHealthRecordList} from './modelData/mockData
 export default class RecordList extends Vue {
   pageData: RecordListPageData = mockChildHealthRecordList
 
-  onLoad(query: {key?: string; title?: string}): void {
+  onLoad(query: {key?: string}): void {
     const key = query && query.key
     if (key && mockRecordListMap[key]) {
       this.pageData = mockRecordListMap[key]
-    } else if (query && query.title) {
-      this.pageData = {
-        title: query.title,
-        items: []
-      }
     }
     uni.setNavigationBarTitle({title: this.pageData.title})
   }

@@ -40,7 +40,7 @@ export default class HealthArchiveRecordCard extends Vue {
     {key: 'physicalExam', title: '健康体检', icon: 'ic-jktj@2x.png'},
     {key: 'maternalHealth', title: '孕产妇健康', icon: 'ic-yfjk@2x.png'},
     {key: 'elderHealth', title: '老年健康', icon: 'ic-lnjk@2x.png'},
-    {key: 'slowDisease', title: '慢管管理', icon: 'ic-mbgl@2x.png'},
+    {key: 'slowDisease', title: '慢病管理', icon: 'ic-mbgl@2x.png'},
     {key: 'mentalHealth', title: '精神管理', icon: 'ic-jsbgl@2x.png'}
   ]
 
@@ -64,7 +64,7 @@ export default class HealthArchiveRecordCard extends Vue {
   handleItemClick(item: any): void {
     this.$Router.navigateTo({
       url: '/pages/residentHome/recordList',
-      params: {key: item.key, title: item.title}
+      params: {key: item.key}
     })
   }
 }

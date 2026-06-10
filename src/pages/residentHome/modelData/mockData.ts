@@ -220,7 +220,7 @@ export const mockHealthArchivePage: HealthArchivePageData = {
       {
         key: 'basicInfo',
         title: '基本信息',
-        expanded: true,
+        expanded: false,
         fields: [
           {label: '姓名', value: '谢*华'},
           {label: '身份证号', value: '**************1293'},
@@ -433,7 +433,7 @@ export const mockChildHealthRecordList: RecordListPageData = {
     {
       key: 'childCheck3to6',
       title: '3-6岁儿童健康检查记录表',
-      expanded: true,
+      expanded: false,
       children: [
         {id: 'c1', date: '2022-01-11'},
         {id: 'c2', date: '2021-12-11'},
@@ -462,12 +462,12 @@ export const mockChildHealthRecordList: RecordListPageData = {
 
 /** 健康体检-记录列表页 mock */
 export const mockPhysicalExamRecordList: RecordListPageData = {
-  title: '健康体检',
+  title: '健康体检管理',
   items: [
     {
       key: 'physicalExam',
       title: '健康体检表',
-      expanded: true,
+      expanded: false,
       children: [
         {id: 'p1', date: '2026-04-10'},
         {id: 'p2', date: '2025-04-10'},
@@ -479,12 +479,12 @@ export const mockPhysicalExamRecordList: RecordListPageData = {
 
 /** 孕产妇健康-记录列表页 mock */
 export const mockMaternalHealthRecordList: RecordListPageData = {
-  title: '孕产妇健康',
+  title: '孕产妇健康管理',
   items: [
     {
       key: 'maternalVisit',
       title: '孕产妇健康管理记录',
-      expanded: true,
+      expanded: false,
       children: [
         {id: 'm1', date: '2026-03-12'},
         {id: 'm2', date: '2026-01-18'}
@@ -495,12 +495,12 @@ export const mockMaternalHealthRecordList: RecordListPageData = {
 
 /** 老年健康-记录列表页 mock */
 export const mockElderHealthRecordList: RecordListPageData = {
-  title: '老年健康',
+  title: '老年健康管理',
   items: [
     {
       key: 'elderAssess',
       title: '老年人健康管理记录',
-      expanded: true,
+      expanded: false,
       children: [
         {id: 'e1', date: '2026-05-10'},
         {id: 'e2', date: '2025-05-10'}
@@ -509,14 +509,14 @@ export const mockElderHealthRecordList: RecordListPageData = {
   ]
 }
 
-/** 慢管管理-记录列表页 mock */
+/**慢病管理-记录列表页 mock */
 export const mockSlowDiseaseRecordList: RecordListPageData = {
-  title: '慢管管理',
+  title: '慢病管理',
   items: [
     {
       key: 'hypertensionVisit',
       title: '高血压随访记录',
-      expanded: true,
+      expanded: false,
       children: [
         {id: 's1', date: '2026-04-15'},
         {id: 's2', date: '2026-01-15'}
@@ -540,7 +540,7 @@ export const mockMentalHealthRecordList: RecordListPageData = {
     {
       key: 'mentalFollowup',
       title: '严重精神障碍随访记录',
-      expanded: true,
+      expanded: false,
       children: [
         {id: 'j1', date: '2026-02-09'},
         {id: 'j2', date: '2025-11-09'}
