@@ -32,6 +32,14 @@
         "navigationBarBackgroundColor": "#1E74FE",
         "navigationBarTextStyle": "white"
       }
+    },
+    {
+      "path": "pages/residentHome/recordList",
+      "style": {
+        "navigationBarTitleText": "儿童健康管理",
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "navigationBarTextStyle": "black"
+      }
     }
   ],
   "globalStyle": {

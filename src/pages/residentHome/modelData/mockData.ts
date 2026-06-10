@@ -7,6 +7,7 @@ import {SurgeryRecordCardData} from './surgeryRecordModel'
 import {VitalSignCardData} from './vitalSignsModel'
 import {AllergyInfoPageData, AllergyLevel} from './allergyInfoModel'
 import {HealthArchivePageData} from './healthArchiveModel'
+import {RecordListPageData} from './recordListModel'
 
 /**
  * 居民健康页 mock 数据集合
@@ -423,5 +424,141 @@ export const mockSurgeryRecordCard: SurgeryRecordCardData = {
       dateTime: '2025-12-10'
     }
   ]
+}
+
+/** 儿童健康-记录列表页 mock */
+export const mockChildHealthRecordList: RecordListPageData = {
+  title: '儿童健康管理',
+  items: [
+    {
+      key: 'childCheck3to6',
+      title: '3-6岁儿童健康检查记录表',
+      expanded: true,
+      children: [
+        {id: 'c1', date: '2022-01-11'},
+        {id: 'c2', date: '2021-12-11'},
+        {id: 'c3', date: '2021-11-11'}
+      ]
+    },
+    {
+      key: 'childCheck1to8',
+      title: '1-8月龄儿童健康检查记录',
+      expanded: false,
+      children: [
+        {id: 'c4', date: '2021-08-11'},
+        {id: 'c5', date: '2021-06-11'}
+      ]
+    },
+    {
+      key: 'newbornVisit',
+      title: '新生儿家庭访视记录',
+      expanded: false,
+      children: [
+        {id: 'c6', date: '2021-03-11'}
+      ]
+    }
+  ]
+}
+
+/** 健康体检-记录列表页 mock */
+export const mockPhysicalExamRecordList: RecordListPageData = {
+  title: '健康体检',
+  items: [
+    {
+      key: 'physicalExam',
+      title: '健康体检表',
+      expanded: true,
+      children: [
+        {id: 'p1', date: '2026-04-10'},
+        {id: 'p2', date: '2025-04-10'},
+        {id: 'p3', date: '2024-04-10'}
+      ]
+    }
+  ]
+}
+
+/** 孕产妇健康-记录列表页 mock */
+export const mockMaternalHealthRecordList: RecordListPageData = {
+  title: '孕产妇健康',
+  items: [
+    {
+      key: 'maternalVisit',
+      title: '孕产妇健康管理记录',
+      expanded: true,
+      children: [
+        {id: 'm1', date: '2026-03-12'},
+        {id: 'm2', date: '2026-01-18'}
+      ]
+    }
+  ]
+}
+
+/** 老年健康-记录列表页 mock */
+export const mockElderHealthRecordList: RecordListPageData = {
+  title: '老年健康',
+  items: [
+    {
+      key: 'elderAssess',
+      title: '老年人健康管理记录',
+      expanded: true,
+      children: [
+        {id: 'e1', date: '2026-05-10'},
+        {id: 'e2', date: '2025-05-10'}
+      ]
+    }
+  ]
+}
+
+/** 慢管管理-记录列表页 mock */
+export const mockSlowDiseaseRecordList: RecordListPageData = {
+  title: '慢管管理',
+  items: [
+    {
+      key: 'hypertensionVisit',
+      title: '高血压随访记录',
+      expanded: true,
+      children: [
+        {id: 's1', date: '2026-04-15'},
+        {id: 's2', date: '2026-01-15'}
+      ]
+    },
+    {
+      key: 'diabetesVisit',
+      title: '糖尿病随访记录',
+      expanded: false,
+      children: [
+        {id: 's3', date: '2026-03-20'}
+      ]
+    }
+  ]
+}
+
+/** 精神管理-记录列表页 mock */
+export const mockMentalHealthRecordList: RecordListPageData = {
+  title: '精神管理',
+  items: [
+    {
+      key: 'mentalFollowup',
+      title: '严重精神障碍随访记录',
+      expanded: true,
+      children: [
+        {id: 'j1', date: '2026-02-09'},
+        {id: 'j2', date: '2025-11-09'}
+      ]
+    }
+  ]
+}
+
+/**
+ * 记录列表页 mock 数据映射
+ * 个人档案各功能（儿童健康、健康体检等）通过 key 跳转到统一列表页时取对应数据
+ */
+export const mockRecordListMap: {[key: string]: RecordListPageData} = {
+  childHealth: mockChildHealthRecordList,
+  physicalExam: mockPhysicalExamRecordList,
+  maternalHealth: mockMaternalHealthRecordList,
+  elderHealth: mockElderHealthRecordList,
+  slowDisease: mockSlowDiseaseRecordList,
+  mentalHealth: mockMentalHealthRecordList
 }
 

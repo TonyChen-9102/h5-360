@@ -11,6 +11,7 @@
         v-for="item in visibleItems"
         :key="item.key"
         class="archive-record-item"
+        @click="handleItemClick(item)"
       >
         <u-image
           :src="getIcon(item.icon)"
@@ -57,6 +58,14 @@ export default class HealthArchiveRecordCard extends Vue {
 
   getIcon(iconName: string): string {
     return require(`@/static/health/${iconName}`)
+  }
+
+  // 点击档案入口，跳转统一记录列表页并传入功能标识
+  handleItemClick(item: any): void {
+    this.$Router.navigateTo({
+      url: '/pages/residentHome/recordList',
+      params: {key: item.key, title: item.title}
+    })
   }
 }
 </script>
