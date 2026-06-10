@@ -40,6 +40,14 @@
         "navigationBarBackgroundColor": "#FFFFFF",
         "navigationBarTextStyle": "black"
       }
+    },
+    {
+      "path": "pages/residentHome/recordDetail",
+      "style": {
+        "navigationBarTitleText": "记录详情",
+        "navigationBarBackgroundColor": "#D6ECFF",
+        "navigationBarTextStyle": "black"
+      }
     }
   ],
   "globalStyle": {

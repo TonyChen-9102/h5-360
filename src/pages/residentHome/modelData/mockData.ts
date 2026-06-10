@@ -8,6 +8,7 @@ import {VitalSignCardData} from './vitalSignsModel'
 import {AllergyInfoPageData, AllergyLevel} from './allergyInfoModel'
 import {HealthArchivePageData} from './healthArchiveModel'
 import {RecordListPageData} from './recordListModel'
+import {RecordDetailPageData} from './recordDetailModel'
 
 /**
  * 居民健康页 mock 数据集合
@@ -562,3 +563,213 @@ export const mockRecordListMap: {[key: string]: RecordListPageData} = {
   mentalHealth: mockMentalHealthRecordList
 }
 
+/** 个人档案记录详情页 mock */
+export const mockRecordDetail: RecordDetailPageData = {
+  title: '健康体检表详情',
+  personInfo: {
+    name: '谢元华',
+    date: '2025-05-10',
+    doctorName: '张大大',
+    orgName: '创业慧康智慧医院'
+  },
+  fieldSections: [
+    {
+      key: 'symptom',
+      title: '症状',
+      expanded: false,
+      fields: [
+        {label: '症状', value: '无症状'}
+      ]
+    },
+    {
+      key: 'general',
+      title: '一般状况',
+      expanded: false,
+      fields: [
+        {label: '体温', value: '37.6 ℃'},
+        {label: '脉率', value: '23 次/分钟'},
+        {label: '呼吸频率', value: '37 次/分钟'},
+        {label: '左侧血压', value: '130/110mmHg'},
+        {label: '右侧血压', value: '130/110mmHg'},
+        {label: '身高', value: '166cm'},
+        {label: '体重', value: '77kg'},
+        {label: '腰围', value: '102cm'},
+        {label: '体质指数', value: '27.94'},
+        {label: '健康状态评估', value: '满意'},
+        {label: '自理评估', value: '可自理(0-3分)'},
+        {label: '认知功能', value: '初筛阴性'},
+        {label: '智力检查总分', value: '10'},
+        {label: '情感状态', value: '初筛阴性'},
+        {label: '抑郁检查总分', value: '8'}
+      ]
+    },
+    {
+      key: 'lifestyle',
+      title: '生活方式',
+      expanded: false,
+      fields: [
+        {label: '锻炼频率', value: '每周一次以上'},
+        {label: '次运动时长', value: '20分钟'},
+        {label: '坚持锻炼时间', value: '1年'},
+        {label: '锻炼方式', value: '跑步'},
+        {label: '饮食习惯', value: '荤素均衡；嗜盐；嗜糖；'},
+        {label: '吸烟状况', value: '已戒烟'},
+        {label: '日吸烟量', value: '0支'},
+        {label: '开始吸烟', value: '18岁'},
+        {label: '戒烟年龄', value: '20岁'},
+        {label: '饮酒频率', value: '偶尔'},
+        {label: '日饮酒量', value: '2两'},
+        {label: '是否戒酒', value: '否'},
+        {label: '近一年内醉酒否', value: '否'},
+        {label: '职业病危害', value: '有'},
+        {label: '工种', value: '无'},
+        {label: '从业时间(年)', value: '12'},
+        {label: '粉尘', value: '无'},
+        {label: '有无防护措施', value: '无'}
+      ]
+    },
+    {
+      key: 'organ',
+      title: '脏器功能',
+      expanded: false,
+      fields: [
+        {label: '口唇', value: '苍白'},
+        {label: '齿列', value: '缺齿'},
+        {label: '咽部', value: '充血'},
+        {label: '左眼视力', value: '无'},
+        {label: '右眼视力', value: '无'},
+        {label: '矫正左眼视力', value: '无'},
+        {label: '矫正右眼视力', value: '无'},
+        {label: '听力', value: '听见'},
+        {label: '运动功能', value: '可顺利完成'}
+      ]
+    }
+  ],
+  problemSection: {
+    key: 'healthProblem',
+    title: '现存主要健康问题',
+    expanded: false,
+    count: 7,
+    items: [
+      {
+        title: '1.双眼视力减退原因待查',
+        description: '您目前的视力低于正常标准，引起视力减低的原因较多，常见于屈光不正、也可见于斜视、弱视、角膜病变、白内障、眼底病变等。建议您到医院眼科进一步检诊。'
+      },
+      {
+        title: '2.双侧甲状腺结节医学处置',
+        description: '检查发现甲状腺结节，建议结合甲状腺功能、超声分级及医生建议定期复查。'
+      }
+    ]
+  },
+  medicineSection: {
+    key: 'medicine',
+    title: '主要用药情况',
+    expanded: false,
+    items: [
+      {
+        name: '糖尿病专科复诊提醒',
+        fields: [
+          {label: '用法', value: '口服'},
+          {label: '用量', value: '常规'},
+          {label: '单位', value: '次/日'}
+        ]
+      },
+      {
+        name: '糖尿病专科复诊提醒',
+        fields: [
+          {label: '用法', value: '口服'},
+          {label: '用量', value: '常规'},
+          {label: '单位', value: '次/日'}
+        ]
+      }
+    ]
+  },
+  hospitalSection: {
+    key: 'hospital',
+    title: '住院治疗情况',
+    expanded: false,
+    items: [
+      {
+        title: '住院史',
+        date: '2026-05-01',
+        orgName: '创业智慧医院',
+        fields: [
+          {label: '原因', value: '咳嗽数周，经CT检查需入院治疗'}
+        ]
+      },
+      {
+        title: '住院史',
+        date: '2024-08-12',
+        orgName: '创业智慧医院',
+        fields: [
+          {label: '原因', value: '发热、胸闷，住院观察治疗'}
+        ]
+      }
+    ]
+  },
+  vaccinationSection: {
+    key: 'vaccination',
+    title: '非免疫规划预防接种史',
+    expanded: false,
+    items: [
+      {
+        title: '乙肝疫苗',
+        date: '2026-05-01',
+        orgName: '创业智慧医院',
+        fields: [
+          {label: '接种部位', value: '左上臂'}
+        ]
+      }
+    ]
+  },
+  manageSection: {
+    key: 'healthManage',
+    title: '健康管理',
+    expanded: false,
+    items: [
+      {
+        key: 'evaluation',
+        title: '健康评价',
+        status: '有异常',
+        content: '缺血性卒中',
+        theme: 'red'
+      },
+      {
+        key: 'guidance',
+        title: '健康指导',
+        status: '建议复查',
+        content: '目标体重：65kg；建议接种疫苗：无；危险因素控制：健康饮酒；其他需控制：无；',
+        theme: 'orange'
+      },
+      {
+        key: 'riskControl',
+        title: '危险因素控制',
+        status: '',
+        content: '合理膳食；规律运动；定期监测血压血糖。',
+        theme: 'red'
+      }
+    ]
+  }
+}
+
+/** 个人档案记录详情页 mock 数据映射 */
+export const mockRecordDetailMap: {[key: string]: RecordDetailPageData} = {
+  c1: mockRecordDetail,
+  c2: mockRecordDetail,
+  c3: mockRecordDetail,
+  c4: mockRecordDetail,
+  c5: mockRecordDetail,
+  c6: mockRecordDetail,
+  p1: mockRecordDetail,
+  p2: mockRecordDetail,
+  p3: mockRecordDetail,
+  m1: mockRecordDetail,
+  m2: mockRecordDetail,
+  e1: mockRecordDetail,
+  e2: mockRecordDetail,
+  s1: mockRecordDetail,
+  s2: mockRecordDetail,
+  s3: mockRecordDetail,
+  j1: mockRecordDetail,
+  j2: mockRecordDetail
+}

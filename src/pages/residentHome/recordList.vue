@@ -71,8 +71,10 @@ export default class RecordList extends Vue {
 
   // 点击子项记录
   handleChildClick(item: RecordListItem, child: RecordListChild): void {
-    void item
-    void child
+    this.$Router.navigateTo({
+      url: '/pages/residentHome/recordDetail',
+      params: {detailId: child.id, title: item.title}
+    })
   }
 }
 </script>
@@ -99,7 +101,7 @@ export default class RecordList extends Vue {
 .record-item {
   display: flex;
   align-items: center;
-  height: 112rpx;
+  padding: 24rpx 0;
 }
 
 .record-item-title {
