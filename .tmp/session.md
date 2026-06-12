@@ -1,0 +1,19 @@
+# Session Anchor
+
+- current_task: T20260611-180000-b4f3
+- task_path: specs/2026-06/T20260611-180000-b4f3-resident-list
+- current_skill: bc-finish-a-dev
+- next_allowed_skill: bc-archive
+- git_allowed: false
+- design_path: specs/2026-06/T20260611-180000-b4f3-resident-list/design.md
+- plan_path: specs/2026-06/T20260611-180000-b4f3-resident-list/plan.md
+- design_status: 已确认
+- plan_status: 已确认
+- production_status: 已完成
+- test_risk_status: 测试不适用
+- risk_record_path: 无
+- review_status: passed
+- finish_status: completed
+- finish_result: 保持工作区原样，未创建提交
+- completed_batches: 第1批（任务1-4全部完成）
+- next_action: 可选归档本次交付

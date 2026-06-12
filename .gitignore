@@ -9,3 +9,17 @@ output/
 *.swp
 *.swo
 *~
+# bcoder-managed begin
+# AI 工具目录与 .bcoder / context/base / .ops-mcp 由 bcoder 物化（init/update），不纳入版本库
+**/.bcoder/
+**/.ops-mcp/
+**/.cursor/
+**/.claude/
+**/.codex/
+**/.trae/
+**/.trae-cn/
+context/base/
+context/base/**
+**/context/base/
+**/context/base/**
+# bcoder-managed end

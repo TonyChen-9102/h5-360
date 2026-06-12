@@ -48,6 +48,22 @@
         "navigationBarBackgroundColor": "#D6ECFF",
         "navigationBarTextStyle": "black"
       }
+    },
+    {
+      "path": "pages/residentHome/residentSearch",
+      "style": {
+        "navigationBarTitleText": "居民检索",
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/residentHome/residentList",
+      "style": {
+        "navigationBarTitleText": "居民列表",
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "navigationBarTextStyle": "black"
+      }
     }
   ],
   "globalStyle": {

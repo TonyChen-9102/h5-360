@@ -3,6 +3,7 @@
     <button type="primary" @click="handleLogin">登录</button>
     <button type="primary" @click="handleLoginByOpenId">微信 OpenId 登录</button>
     <button type="primary" @click="goToResidentHome">健康视图概览</button>
+    <button type="primary" @click="goToResidentSearch">居民检索</button>
     <view class="toast-section">
       <view class="section-title">Toast 示例</view>
       <u-button type="primary" @click="showDefaultToast">默认 Toast</u-button>
@@ -76,6 +77,12 @@ export default class DemoIndex extends Vue {
   goToResidentHome() {
     uni.navigateTo({
       url: '/pages/residentHome/index'
+    })
+  }
+
+  goToResidentSearch() {
+    uni.navigateTo({
+      url: '/pages/residentHome/residentSearch'
     })
   }
 }

@@ -125,6 +125,15 @@ import SurgeryRecordCardComp from './comp/SurgeryRecordCard.vue'
   }
 })
 export default class ResidentHomeIndex extends Vue {
+  /** 是否从检索页跳转而来 */
+  isFromSearch: boolean = false
+
+  /** 外部传入的居民标识 */
+  residentId: string = ''
+
+  /** 外部传入的身份证号 */
+  searchIdNumber: string = ''
+
   residentInfo: ResidentInfo = mockResidentInfo
 
   vitalSignCard: VitalSignCardData = mockVitalSignCard
@@ -138,6 +147,15 @@ export default class ResidentHomeIndex extends Vue {
   medicationRecordCard: MedicationRecordCardData = mockMedicationRecordCard
 
   surgeryRecordCard: SurgeryRecordCardData = mockSurgeryRecordCard
+
+  onLoad(query: Record<string, string>): void {
+    if (query?.fromSearch === 'true') {
+      this.isFromSearch = true
+      this.residentId = query.residentId || ''
+      this.searchIdNumber = query.idNumber || ''
+      // TODO: 根据 residentId 或 idNumber 调用后端接口获取居民信息，替换 mock 数据
+    }
+  }
 
   get avatarUrl(): string {
     return ResidentHomeModel.getAvatarImage(this.residentInfo.sex, this.residentInfo.age)

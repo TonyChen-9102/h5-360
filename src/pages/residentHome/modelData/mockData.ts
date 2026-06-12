@@ -9,6 +9,7 @@ import {AllergyInfoPageData, AllergyLevel} from './allergyInfoModel'
 import {HealthArchivePageData} from './healthArchiveModel'
 import {RecordListPageData} from './recordListModel'
 import {RecordDetailPageData} from './recordDetailModel'
+import {ResidentListPageData} from './residentListModel'
 
 /**
  * 居民健康页 mock 数据集合
@@ -750,6 +751,147 @@ export const mockRecordDetail: RecordDetailPageData = {
       }
     ]
   }
+}
+
+/** 居民列表页 mock */
+export const mockResidentList: ResidentListPageData = {
+  list: [
+    {
+      residentId: 'r001',
+      name: '刘秋英',
+      age: 54,
+      sex: 2,
+      idNumber: '425485197202125463',
+      phone: '13954625841',
+      avatar: ''
+    },
+    {
+      residentId: 'r002',
+      name: '李建国',
+      age: 57,
+      sex: 1,
+      idNumber: '425485196902125463',
+      phone: '13954625841',
+      avatar: ''
+    },
+    {
+      residentId: 'r003',
+      name: '张飞',
+      age: 57,
+      sex: 1,
+      idNumber: '425485196902125463',
+      phone: '13954625841',
+      avatar: ''
+    },
+    {
+      residentId: 'r004',
+      name: '王秀兰',
+      age: 62,
+      sex: 2,
+      idNumber: '425485196403156721',
+      phone: '13867234510',
+      avatar: ''
+    },
+    {
+      residentId: 'r005',
+      name: '陈志强',
+      age: 45,
+      sex: 1,
+      idNumber: '425485198107283214',
+      phone: '15012345678',
+      avatar: ''
+    },
+    {
+      residentId: 'r006',
+      name: '赵美玲',
+      age: 38,
+      sex: 2,
+      idNumber: '425485198805061238',
+      phone: '18676543210',
+      avatar: ''
+    },
+    {
+      residentId: 'r007',
+      name: '孙伟',
+      age: 70,
+      sex: 1,
+      idNumber: '425485195601093412',
+      phone: '13712349876',
+      avatar: ''
+    },
+    {
+      residentId: 'r008',
+      name: '周慧芳',
+      age: 48,
+      sex: 2,
+      idNumber: '425485197804172156',
+      phone: '15987654321',
+      avatar: ''
+    },
+    {
+      residentId: 'r009',
+      name: '吴德明',
+      age: 66,
+      sex: 1,
+      idNumber: '425485196008234517',
+      phone: '13567891234',
+      avatar: ''
+    },
+    {
+      residentId: 'r010',
+      name: '郑晓燕',
+      age: 33,
+      sex: 2,
+      idNumber: '425485199306118923',
+      phone: '18890123456',
+      avatar: ''
+    },
+    {
+      residentId: 'r011',
+      name: '黄国平',
+      age: 51,
+      sex: 1,
+      idNumber: '425485197503045678',
+      phone: '13645678901',
+      avatar: ''
+    },
+    {
+      residentId: 'r012',
+      name: '林淑芬',
+      age: 73,
+      sex: 2,
+      idNumber: '425485195302197834',
+      phone: '15123456789',
+      avatar: ''
+    },
+    {
+      residentId: 'r013',
+      name: '马俊杰',
+      age: 29,
+      sex: 1,
+      idNumber: '425485199701256142',
+      phone: '17689012345',
+      avatar: ''
+    },
+    {
+      residentId: 'r014',
+      name: '杨秀英',
+      age: 60,
+      sex: 2,
+      idNumber: '425485196601078245',
+      phone: '13456789012',
+      avatar: ''
+    },
+    {
+      residentId: 'r015',
+      name: '徐振华',
+      age: 42,
+      sex: 1,
+      idNumber: '425485198409183567',
+      phone: '18534567890',
+      avatar: ''
+    }
+  ]
 }
 
 /** 个人档案记录详情页 mock 数据映射 */
