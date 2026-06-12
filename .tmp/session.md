@@ -1,19 +1,22 @@
-# Session Anchor
+# Session Handoff
 
-- current_task: T20260611-180000-b4f3
-- task_path: specs/2026-06/T20260611-180000-b4f3-resident-list
-- current_skill: bc-finish-a-dev
-- next_allowed_skill: bc-archive
+## 锚点
+
+- current_task: T20260612-100000-a1b2
+- task_path: specs/2026-06/T20260612-100000-a1b2-medical-record-visit-view/
+- current_skill: bc-write-tests
+- next_allowed_skill: bc-code-review
 - git_allowed: false
-- design_path: specs/2026-06/T20260611-180000-b4f3-resident-list/design.md
-- plan_path: specs/2026-06/T20260611-180000-b4f3-resident-list/plan.md
-- design_status: 已确认
-- plan_status: 已确认
-- production_status: 已完成
-- test_risk_status: 测试不适用
-- risk_record_path: 无
-- review_status: passed
-- finish_status: completed
-- finish_result: 保持工作区原样，未创建提交
-- completed_batches: 第1批（任务1-4全部完成）
-- next_action: 可选归档本次交付
+- design_path: specs/2026-06/T20260612-100000-a1b2-medical-record-visit-view/design.md
+- plan_path: specs/2026-06/T20260612-100000-a1b2-medical-record-visit-view/plan.md
+- verification_status: passed
+- review_status: not_started
+- finish_status: not_started
+- change_pending_level: none
+
+## 工作层
+
+- 全部 4 个生产任务已完成
+- 7 个单元测试全部通过
+- 开发服务器已启动：http://localhost:8081/
+- next_action: 进入代码审查

@@ -15,6 +15,8 @@
 
 使用 SSDEV 框架内置工具类。
 
+当存在masterGO设计链接，记得使用masterGo的MCP
+
 <!-- [frontend-stack] layer: project -->
 ## 前端技术栈
 

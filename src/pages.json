@@ -64,6 +64,14 @@
         "navigationBarBackgroundColor": "#FFFFFF",
         "navigationBarTextStyle": "black"
       }
+    },
+    {
+      "path": "pages/medicalRecord/visitView",
+      "style": {
+        "navigationBarTitleText": "就诊视图",
+        "navigationBarBackgroundColor": "#F3F4F5",
+        "navigationBarTextStyle": "black"
+      }
     }
   ],
   "globalStyle": {
