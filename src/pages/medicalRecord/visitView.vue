@@ -274,7 +274,7 @@ export default class VisitView extends Vue {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18rpx 24rpx;
+  padding: 0 24rpx;
   position: relative;
   min-height: 84rpx;
 }
@@ -333,7 +333,7 @@ export default class VisitView extends Vue {
 .visit-card-body {
   display: flex;
   align-items: flex-start;
-  padding: 20rpx 24rpx 24rpx;
+  padding: 10rpx 24rpx 24rpx;
 }
 
 .visit-card-date {
